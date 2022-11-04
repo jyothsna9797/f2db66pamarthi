@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+h1 {
+  font-family: Copperplate, Papyrus, fantasy;
+  font-size: 88px;
+  text-shadow: 5px 4px 5px #aaa;
+}
+p {
+  font-family: 'Courier New', monospace;
+  font-size: 28px; 
+  color: green;
+}
+
+table, td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 10%;
+}
+
+td {
+  text-align: center;
+}

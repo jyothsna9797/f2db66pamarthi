@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  p Working with pug generating templates on the sever side using #{title}
+  button(type="button", class="btn btn-info", onClick="doBump()") Press Me 
+  
+  div(id="bump") 
+    br
+    |Bump the count
+  
+  br
+  a(class="btn btn-info" href="pastry") pastry's
+
+  script.
+    var count = 0;
+    var bump = 1;
+    var result;
+    function doBump() {
+      count += bump;
+      bump+=1; 
+      result = "Count "+ count + " with bump " + bump;
+      //console.log(result);
+      document.getElementById("bump").innerHTML = result;
+    }
+
+   
+
