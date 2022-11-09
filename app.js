@@ -3,12 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var pastry = require("./models/pastry"); 
+var pastry = require("./models/pastry");
 
 require('dotenv').config();
 const connectionString = process.env.MONGO_CON
 mongoose = require('mongoose');
-mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}); 
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -35,12 +35,12 @@ app.use('/gridbuild', gridbuildRouter);
 app.use('/selector', selectorRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -49,5 +49,23 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
- 
+
+async function recreateDB() {
+  // Delete everything 
+  await Costume.deleteMany();
+
+  let instance1 = new
+    Costume({
+      costume_type: "ghost", size: 'large',
+      cost: 25.4
+    });
+  instance1.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("First object saved")
+  });
+}
+
+let reseed = true;
+if (reseed) { recreateDB(); }
+
 module.exports = app;
