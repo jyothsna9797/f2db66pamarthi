@@ -52,14 +52,32 @@ app.use(function (err, req, res, next) {
 
 async function recreateDB() {
   // Delete everything 
-  await Costume.deleteMany();
+  await Pastry.deleteMany();
 
   let instance1 = new
-    Costume({
-      costume_type: "ghost", size: 'large',
-      cost: 25.4
+    Pastry({
+      pastry_flavour: "Red velvet", calories: 10,
+      pastry_shape: "circle"
+    });
+    let instance2 = new
+    Pastry({
+      pastry_flavour: "Choclate", calories: 23.4,
+      pastry_shape: "Rectangle"
+    });
+    let instance3 = new
+    Pastry({
+      pastry_flavour: "Strawberry", calories: 23,
+      pastry_shape: "Square"
     });
   instance1.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("First object saved")
+  });
+  instance2.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("First object saved")
+  });
+  instance3.save(function (err, doc) {
     if (err) return console.error(err);
     console.log("First object saved")
   });
