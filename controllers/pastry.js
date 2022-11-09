@@ -1,8 +1,15 @@
 var Pastry = require('../models/pastry'); 
  
 // List of all Pastry 
-exports.pastry_list = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Pastry list'); 
+exports.pastry_list = async function(req, res) {  
+        try{ 
+            thePastries = await Pastry.find(); 
+            res.send(thePastries); 
+        } 
+        catch(err){ 
+            res.status(500); 
+            res.send(`{"error": ${err}}`); 
+        }   
 }; 
  
 // for a specific Pastry. 
