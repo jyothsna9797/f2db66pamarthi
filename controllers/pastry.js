@@ -1,26 +1,26 @@
-var Costume = require('../models/pastry'); 
+var Pastry = require('../models/pastry'); 
  
-// List of all Costumes 
-exports.costume_list = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Costume list'); 
+// List of all Pastry 
+exports.pastry_list = function(req, res) { 
+    res.send('NOT IMPLEMENTED: Pastry list'); 
 }; 
  
-// for a specific Costume. 
-exports.costume_detail = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Costume detail: ' + req.params.id); 
+// for a specific Pastry. 
+exports.pastry_detail = function(req, res) { 
+    res.send('NOT IMPLEMENTED: Pastry detail: ' + req.params.id); 
 }; 
  
-// Handle Costume create on POST. 
-exports.costume_create_post = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Costume create POST'); 
+// Handle Pastry create on POST. 
+exports.pastry_create_post = function(req, res) { 
+    res.send('NOT IMPLEMENTED: Pastry create POST'); 
 }; 
  
-// Handle Costume delete form on DELETE. 
-exports.costume_delete = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Costume delete DELETE ' + req.params.id); 
+// Handle Pastry delete form on DELETE. 
+exports.pastry_delete = function(req, res) { 
+    res.send('NOT IMPLEMENTED: Pastry delete DELETE ' + req.params.id); 
 }; 
  
-// Handle Costume update form on PUT. 
-exports.costume_update_put = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Costume update PUT' + req.params.id); 
-}; 
+// Handle Pastry update form on PUT. 
+exports.pastry_update_put = function(req, res) { 
+    res.send('NOT IMPLEMENTED: Pastry update PUT' + req.params.id); 
+};

@@ -10,7 +10,7 @@ var pastry_controller = require('../controllers/pastry');
 // GET resources base. 
 router.get('/', api_controller.api); 
  
-/// PASTRY ROUTES /// 
+/// Pastry ROUTES /// 
  
 // POST request for creating a Pastry.  
 router.post('/pastries', pastry_controller.pastry_create_post); 
@@ -27,5 +27,4 @@ router.get('/pastries/:id', pastry_controller.pastry_detail);
 // GET request for list of all Pastry items. 
 router.get('/pastries', pastry_controller.pastry_list); 
  
-module.exports = router; 
- 
+module.exports = router;
