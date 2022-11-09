@@ -80,11 +80,11 @@ async function recreateDB() {
   });
   instance2.save(function (err, doc) {
     if (err) return console.error(err);
-    console.log("First object saved")
+    console.log("Second object saved")
   });
   instance3.save(function (err, doc) {
     if (err) return console.error(err);
-    console.log("First object saved")
+    console.log("Third object saved")
   });
 }
 
