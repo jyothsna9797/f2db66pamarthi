@@ -16,7 +16,7 @@ router.get('/', api_controller.api);
 router.post('/pastries', pastry_controller.pastry_create_post); 
  
 // DELETE request to delete Pastry. 
-router.delete('/pastries/:id', pastry_controller.pastries_delete); 
+router.delete('/pastries/:id', pastry_controller.pastry_delete); 
  
 // PUT request to update Pastry. 
 router.put('/pastries/:id', pastry_controller.pastry_update_put); 
