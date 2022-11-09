@@ -15,6 +15,7 @@ var usersRouter = require('./routes/users');
 var pastryRouter = require('./routes/pastry');
 var gridbuildRouter = require('./routes/gridbuild');
 var selectorRouter = require('./routes/selector');
+var resourceRouter = require('./routes/resource');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/users', usersRouter);
 app.use('/pastry', pastryRouter);
 app.use('/gridbuild', gridbuildRouter);
 app.use('/selector', selectorRouter);
+app.use('/resource', resourceRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -56,17 +58,20 @@ async function recreateDB() {
 
   let instance1 = new
     pastry({
-      pastry_flavour: "Red velvet", calories: 10,
+      pastry_flavour: "Red velvet", 
+      calories: 10,
       pastry_shape: "circle"
     });
     let instance2 = new
     pastry({
-      pastry_flavour: "Choclate", calories: 23.4,
+      pastry_flavour: "Choclate", 
+      calories: 23.4,
       pastry_shape: "Rectangle"
     });
     let instance3 = new
     pastry({
-      pastry_flavour: "Strawberry", calories: 23,
+      pastry_flavour: "Strawberry", 
+      calories: 23,
       pastry_shape: "Square"
     });
   instance1.save(function (err, doc) {
