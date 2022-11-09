@@ -52,20 +52,20 @@ app.use(function (err, req, res, next) {
 
 async function recreateDB() {
   // Delete everything 
-  await Pastry.deleteMany();
+  await pastry.deleteMany();
 
   let instance1 = new
-    Pastry({
+    pastry({
       pastry_flavour: "Red velvet", calories: 10,
       pastry_shape: "circle"
     });
     let instance2 = new
-    Pastry({
+    pastry({
       pastry_flavour: "Choclate", calories: 23.4,
       pastry_shape: "Rectangle"
     });
     let instance3 = new
-    Pastry({
+    pastry({
       pastry_flavour: "Strawberry", calories: 23,
       pastry_shape: "Square"
     });
