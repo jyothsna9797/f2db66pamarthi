@@ -2,10 +2,11 @@ extends layout
 
 block content
   h1= title
-  - var results = [{"pastry_flavour": "Red velvet", "calories": 10, "pastry_shape": "circle"},  {"pastry_flavour": "Choclate", "calories": 23.4, "pastry_shape": "Rectangle"}, {"pastry_flavour": "Strawberry", "calories": 23, "pastry_shape": "Square"}];
+  - let pastries = results
+  //- var results = [{"pastry_flavour": "Red velvet", "calories": 10, "pastry_shape": "circle"},  {"pastry_flavour": "Choclate", "calories": 23.4, "pastry_shape": "Rectangle"}, {"pastry_flavour": "Strawberry", "calories": 23, "pastry_shape": "Square"}];
   div(class="container-fluid")
     div(class="row")
-        each items, index in results
+        each items, index in pastries
             div.col-sm-2(onclick=`buy(${index})`) pastry_flavour: #{items["pastry_flavour"]} <br> calories:  #{items["calories"]} <br>pastry_shape:  #{items["pastry_shape"]}
   
   script. 
