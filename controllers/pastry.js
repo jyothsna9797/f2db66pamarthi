@@ -12,6 +12,19 @@ exports.pastry_list = async function(req, res) {
         }   
 }; 
  
+// VIEWS 
+// Handle a show all view 
+exports.pastry_view_all_Page = async function(req, res) { 
+    try{ 
+        thePastries = await Pastry.find(); 
+        res.render('pastries', { title: 'Pastry Search Results', results: thePastries }); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+}; 
+
 // for a specific Pastry. 
 exports.pastry_detail = function(req, res) { 
     res.send('NOT IMPLEMENTED: Pastry detail: ' + req.params.id); 
