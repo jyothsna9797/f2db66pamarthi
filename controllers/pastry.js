@@ -70,8 +70,8 @@ ${JSON.stringify(req.body)}`)
         // Do updates of properties 
         if(req.body.pastry_flavour)  
                toUpdate.pastry_flavour = req.body.pastry_flavour; 
-        if(req.body.calories) toUpdate.cost = req.body.calories; 
-        if(req.body.pastry_shape) toUpdate.size = req.body.pastry_shape; 
+        if(req.body.calories) toUpdate.calories = req.body.calories; 
+        if(req.body.pastry_shape) toUpdate.pastry_shape = req.body.pastry_shape; 
         let result = await toUpdate.save(); 
         console.log("Sucess " + result) 
         res.send(result) 
