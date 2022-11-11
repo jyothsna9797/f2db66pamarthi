@@ -62,6 +62,22 @@ exports.pastry_delete = function (req, res) {
 };
 
 // Handle Pastry update form on PUT. 
-exports.pastry_update_put = function (req, res) {
-    res.send('NOT IMPLEMENTED: Pastry update PUT' + req.params.id);
-};
+exports.pastry_update_put = async function(req, res) { 
+    console.log(`update on id ${req.params.id} with body 
+${JSON.stringify(req.body)}`) 
+    try { 
+        let toUpdate = await Co.findById( req.params.id) 
+        // Do updates of properties 
+        if(req.body.pastry_flavour)  
+               toUpdate.pastry_flavour = req.body.pastry_flavour; 
+        if(req.body.calories) toUpdate.cost = req.body.calories; 
+        if(req.body.pastry_shape) toUpdate.size = req.body.pastry_shape; 
+        let result = await toUpdate.save(); 
+        console.log("Sucess " + result) 
+        res.send(result) 
+    } catch (err) { 
+        res.status(500) 
+        res.send(`{"error": ${err}: Update for id ${req.params.id} failed`); 
+    } 
+}; 
+ 
