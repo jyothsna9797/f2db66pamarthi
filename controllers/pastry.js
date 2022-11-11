@@ -66,7 +66,7 @@ exports.pastry_update_put = async function(req, res) {
     console.log(`update on id ${req.params.id} with body 
 ${JSON.stringify(req.body)}`) 
     try { 
-        let toUpdate = await Co.findById( req.params.id) 
+        let toUpdate = await Pastry.findById( req.params.id) 
         // Do updates of properties 
         if(req.body.pastry_flavour)  
                toUpdate.pastry_flavour = req.body.pastry_flavour; 
