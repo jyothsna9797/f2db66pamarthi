@@ -57,9 +57,17 @@ exports.pastry_create_post = async function (req, res) {
 };
 
 // Handle Pastry delete form on DELETE. 
-exports.pastry_delete = function (req, res) {
-    res.send('NOT IMPLEMENTED: Pastry delete DELETE ' + req.params.id);
-};
+exports.pastry_delete = async function(req, res) { 
+    console.log("delete "  + req.params.id) 
+    try { 
+        result = await Pastry.findByIdAndDelete( req.params.id) 
+        console.log("Removed " + result) 
+        res.send(result) 
+    } catch (err) { 
+        res.status(500) 
+        res.send(`{"error": Error deleting ${err}}`); 
+    } 
+}; 
 
 // Handle Pastry update form on PUT. 
 exports.pastry_update_put = async function(req, res) { 
