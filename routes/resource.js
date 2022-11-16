@@ -29,6 +29,11 @@ router.get('/pastries/:id', pastry_controller.pastry_detail);
 // GET request for list of all Pastry items. 
 router.get('/pastries', pastry_controller.pastry_list); 
 
+/* GET detail costume page */ 
 router.get('/detail', pastry_controller.pastry_view_one_Page); 
+
+/* GET create costume page */ 
+router.get('/create', pastry_controlers.pastry_create_Page); 
+
  
 module.exports = router;

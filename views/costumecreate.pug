@@ -1,0 +1,34 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  form(id='PastryForm', action="/resource/pastries", method="POST") 
+    div.form-group 
+        label.pastryAttr(for='pastry_flavour') Pastry type 
+        input#pastry_flavour(type='text', name='pastry_flavour') 
+    div.form-group 
+        label.pastryAttr(for='calories') Pastry Calories
+        input#calories(type='number', name='calories') 
+    div.form-group 
+        label.pastryAttr(for='pastry_shape') Pastry Shape
+        input#pastry_shape(type='text', name='pastry_shape') 
+    input(type="submit") 
+ 
+  script. 
+    document.forms['CostumeForm'].addEventListener('submit', (event) => { 
+      event.preventDefault(); 
+      // TODO do something here to show user that form is being submitted 
+      fetch(event.target.action, { 
+        method: 'POST', 
+        body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Save succeded") 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Save failed " + error ) 
+      }); 
+    }); 
