@@ -36,7 +36,7 @@ router.get('/detail', pastry_controller.pastry_view_one_Page);
 router.get('/create', pastry_controller.pastry_create_Page); 
 
 /* GET create update page */ 
-router.get('/update', pastry_controlers.pastry_update_Page); 
+router.get('/update', pastry_controller.pastry_update_Page); 
 
  
 module.exports = router;
