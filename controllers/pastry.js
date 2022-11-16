@@ -103,7 +103,7 @@ ${JSON.stringify(req.body)}`)
     } 
 }; 
  
-// Handle building the view for creating a costume. 
+// Handle building the view for creating a pastry. 
 // No body, no in path parameter, no query. 
 // Does not need to be async 
 exports.pastry_create_Page =  function(req, res) { 
@@ -116,3 +116,18 @@ exports.pastry_create_Page =  function(req, res) {
         res.send(`{'error': '${err}'}`); 
     } 
 }; 
+
+// Handle building the view for updating a pastry. 
+// query provides the id 
+exports.pastry_update_Page =  async function(req, res) { 
+    console.log("update view for item "+req.query.id) 
+    try{ 
+        let result = await Pastry.findById(req.query.id) 
+        res.render('pastryupdate', { title: 'Pastry Update', toShow: result }); 
+    } 
+    catch(err){ 
+        res.status(500) 
+        res.send(`{'error': '${err}'}`); 
+    } 
+}; 
+ 
