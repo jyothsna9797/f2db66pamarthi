@@ -23,7 +23,7 @@ block content
         div(class='pastryAttr mr-3') Calories is: 
         div #{calories} 
       div.row 
-        div(class='pastryttr mr-3') Pastry shape is: 
+        div(class='pastryAttr mr-3') Pastry shape is: 
         div #{pastry_shape} 
  
     button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
@@ -32,7 +32,7 @@ block content
   script. 
     function cancel() { 
       // Go back to the home page for the costume collection 
-      window.location.href='/pastries' 
+      window.location.href='/resource/pastries' 
     } 
   script. 
     function deleteOnid() { 
@@ -45,7 +45,7 @@ block content
         return resp.json(); // or resp.text() or whatever the server sends 
       }).then((body) => { 
         alert("Delete succeded") 
-        window.location.href='/pastries' 
+        window.location.href='/resource/pastries' 
         // TODO handle body 
       }).catch((error) => { 
         // TODO handle error 
