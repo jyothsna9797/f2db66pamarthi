@@ -131,3 +131,16 @@ exports.pastry_update_Page =  async function(req, res) {
     } 
 }; 
  
+// Handle a delete one view with id from query 
+exports.pastry_delete_Page = async function(req, res) { 
+    console.log("Delete view for id "  + req.query.id) 
+    try{ 
+        result = await Pastry.findById(req.query.id) 
+        res.render('pastrydelete', { title: 'Pastry Delete', toShow: 
+result }); 
+    } 
+    catch(err){ 
+        res.status(500) 
+        res.send(`{'error': '${err}'}`); 
+    } 
+}; 

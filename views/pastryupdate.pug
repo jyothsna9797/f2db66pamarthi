@@ -4,19 +4,19 @@ block content
   h1= title 
   - let pastryid = toShow._id 
   - let pastry_flavour = toShow.pastry_flavour 
-  - let calories = calories
+  - let calories = toShow.calories
   - let pastry_shape = toShow.pastry_shape 
 
   div.row(class='mb-2') 
     div.mr-1 ID is 
     div #{pastryid} 
   - let actionid = "/resource/pastries/" + pastryid 
-  form(id='PastryForm', action="/resource/pastries", method="POST") 
+  form(id='PastryForm', action=actionid, method="PUT") 
     div.form-group 
         label.pastryAttr(for='pastry_flavour') Pastry flavour
         input#pastry_flavour(type='text', name='pastry_flavour', value= pastry_flavour) 
     div.form-group 
-        label.pastryAttr(for='calories') Costume size 
+        label.pastryAttr(for='calories') calories 
         input#calories(type='number', name='calories', value=calories) 
     div.form-group 
         label.pastryAttr(for='pastry_shape') Pastry Shape

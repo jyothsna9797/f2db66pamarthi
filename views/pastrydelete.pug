@@ -1,0 +1,55 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  if (toShow == null) 
+    h2 No instance to delete 
+  else 
+    - let pastryid = toShow._id 
+    - let pastry_flavour = toShow.pastry_flavour 
+    - let calories = toShow.calories
+    - let pastry_shape = toShow.pastry_shape 
+    - let actionid = "/resource/pastries/" + pastryid 
+    script let actionid = "#{actionid}" 
+    div 
+      div.row 
+        div(class='pastryAttr mr-3') Pastry ID is: 
+        div #{pastryid} 
+      div.row 
+        div(class='pastryAttr mr-3') Pastry Flavour is: 
+        div #{pastry_flavour} 
+      div.row 
+        div(class='pastryAttr mr-3') Calories is: 
+        div #{calories} 
+      div.row 
+        div(class='pastryttr mr-3') Pastry shape is: 
+        div #{pastry_shape} 
+ 
+    button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+ 
+  script. 
+    function cancel() { 
+      // Go back to the home page for the costume collection 
+      window.location.href='/pastries' 
+    } 
+  script. 
+    function deleteOnid() { 
+      console.log("starting delete") 
+      // delete first 
+      fetch(actionid, { 
+        
+        method: 'DELETE'      
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Delete succeded") 
+        window.location.href='/pastries' 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Delete failed " + error ) 
+      }); 
+    }
+  

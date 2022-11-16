@@ -38,5 +38,8 @@ router.get('/create', pastry_controller.pastry_create_Page);
 /* GET create update page */ 
 router.get('/update', pastry_controller.pastry_update_Page); 
 
+/* GET delete costume page */ 
+router.get('/delete', pastry_controller.pastry_delete_Page); 
+
  
 module.exports = router;
