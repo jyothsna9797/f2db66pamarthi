@@ -12,7 +12,7 @@ router.get('/', api_controller.api);
  
 /// Pastry ROUTES /// 
  
-router.get('/detail', pastry_controller.pastry_view_one_Page); 
+
 
 // POST request for creating a Pastry.  
 router.post('/pastries', pastry_controller.pastry_create_post); 
@@ -28,5 +28,7 @@ router.get('/pastries/:id', pastry_controller.pastry_detail);
  
 // GET request for list of all Pastry items. 
 router.get('/pastries', pastry_controller.pastry_list); 
+
+router.get('/detail', pastry_controller.pastry_view_one_Page); 
  
 module.exports = router;
