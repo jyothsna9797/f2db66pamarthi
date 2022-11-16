@@ -5,13 +5,13 @@ block content
  
   form(id='PastryForm', action="/resource/pastries", method="POST") 
     div.form-group 
-        label.pastryAttr(for='pastry_flavour') Pastry type 
+        label.pastryAttr(for='pastry_flavour') pastry flavour  
         input#pastry_flavour(type='text', name='pastry_flavour') 
     div.form-group 
-        label.pastryAttr(for='calories') Pastry Calories
+        label.jackalAttr(for='calories') calories  
         input#calories(type='number', name='calories') 
     div.form-group 
-        label.pastryAttr(for='pastry_shape') Pastry Shape
+        label.jackalAttr(for='pastry_shape') Pastry shape  
         input#pastry_shape(type='text', name='pastry_shape') 
     input(type="submit") 
  
@@ -31,4 +31,4 @@ block content
         // TODO handle error 
         alert("Save failed " + error ) 
       }); 
-    }); 
+    });
