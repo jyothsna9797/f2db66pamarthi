@@ -5,13 +5,13 @@ block content
  
   form(id='PastryForm', action="/resource/pastries", method="POST") 
     div.form-group 
-        label.pastryAttr(for='pastry_flavour') pastry flavour  
+        label.pastryAttr(for='pastry_flavour') Pastry flavour
         input#pastry_flavour(type='text', name='pastry_flavour') 
     div.form-group 
-        label.pastryAttr(for='calories') calories  
+        label.pastryAttr(for='calories') Costume size 
         input#calories(type='number', name='calories') 
     div.form-group 
-        label.pastryAttr(for='pastry_shape') Pastry shape  
+        label.pastryAttr(for='pastry_shape') Pastry Shape
         input#pastry_shape(type='text', name='pastry_shape') 
     input(type="submit") 
  
@@ -20,15 +20,15 @@ block content
       event.preventDefault(); 
       // TODO do something here to show user that form is being submitted 
       fetch(event.target.action, { 
-        method: 'PUT', 
+        method: 'POST', 
         body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
       }).then((resp) => { 
         return resp.json(); // or resp.text() or whatever the server sends 
       }).then((body) => { 
-        alert("Update succeded") 
+        alert("Save succeded") 
         // TODO handle body 
       }).catch((error) => { 
         // TODO handle error 
-        alert("Update failed " + error ) 
+        alert("Save failed " + error ) 
       }); 
-    });
+    }); 
