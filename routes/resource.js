@@ -12,7 +12,7 @@ router.get('/', api_controller.api);
  
 /// Pastry ROUTES /// 
  
-router.get('/detail', pastry_controlers.pastry_view_one_Page); 
+router.get('/detail', pastry_controller.pastry_view_one_Page); 
 
 // POST request for creating a Pastry.  
 router.post('/pastries', pastry_controller.pastry_create_post); 
