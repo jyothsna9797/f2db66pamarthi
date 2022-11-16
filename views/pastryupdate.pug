@@ -7,20 +7,23 @@ block content
   - let calories = toShow.calories
   - let pastry_shape = toShow.pastry_shape 
 
-  div.row(class='mb-2') 
-    div.mr-1 ID is 
-    div #{pastryid} 
+  div.row(class='mb-2 d-flex justify-content-center p-3 text-center' style="color: powdered-blue") 
+    div.mr-1(style="font-family: 'Tangerine', serif;color:green; font-size: 28px; text-align: centre;" class="text-success") ID is 
+    div(style="font-family: 'Courier New', monospace; color:green; font-size: 28px; text-align: centre;" class="text-danger") #{pastryid} 
   - let actionid = "/resource/pastries/" + pastryid 
-  form(id='PastryForm', action=actionid, method="PUT") 
+  form(id='PastryForm', action=actionid, method="PUT", class='justify-content-center p-3 text-center') 
     div.form-group 
-        label.pastryAttr(for='pastry_flavour') Pastry flavour
-        input#pastry_flavour(type='text', name='pastry_flavour', value= pastry_flavour) 
+        label.pastryAttr(for='pastry_flavour', style="font-family: 'Courier New', monospace;color:green; font-size: 28px; text-align: centre;" class="text-success") Pastry flavour
+        input#pastry_flavour(type='text', name='pastry_flavour', value= pastry_flavour)
     div.form-group 
-        label.pastryAttr(for='calories') calories 
+        label.pastryAttr(for='calories', style="font-family: 'Courier New', monospace;color:green; font-size: 28px; text-align: centre;" class="text-success") calories 
         input#calories(type='number', name='calories', value=calories) 
     div.form-group 
-        label.pastryAttr(for='pastry_shape') Pastry Shape
+        label.pastryAttr(for='pastry_shape', style="font-family: 'Courier New', monospace;color:green; font-size: 28px; text-align: centre;" class="text-success") Pastry Shape
         input#pastry_shape(type='text', name='pastry_shape', value= pastry_shape) 
+    br
+    br
+
     input(type="submit") 
  
   script. 

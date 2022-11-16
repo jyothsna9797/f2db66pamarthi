@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: azure;
 }
 
 a {
@@ -8,8 +9,10 @@ a {
 }
 h1 {
   font-family: Copperplate, Papyrus, fantasy;
-  font-size: 88px;
+  font-size: 68px;
   text-shadow: 5px 4px 5px #aaa;
+  color:darksalmon;
+  text-align: center;
 }
 p {
   font-family: 'Courier New', monospace;
@@ -30,7 +33,16 @@ td {
   text-align: center;
 }
 .pastryAttr { 
-  background-color: aquamarine; 
-  width: 120px; 
-  color: voilet
+  width: 380px;
+  
 } 
+div.form-group {
+  text-align: centre;
+}
+input[type=submit] {
+  font-family: 'Tangerine', serif;
+  font-size: 38px; 
+  text-align: centre;
+  background-color:darkslategrey;
+  color:aliceblue;
+}
