@@ -33,7 +33,7 @@ router.get('/pastries', pastry_controller.pastry_list);
 router.get('/detail', pastry_controller.pastry_view_one_Page); 
 
 /* GET create costume page */ 
-router.get('/create', pastry_controlers.pastry_create_Page); 
+router.get('/create', pastry_controller.pastry_create_Page); 
 
  
 module.exports = router;
