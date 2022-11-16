@@ -56,7 +56,9 @@ exports.pastry_create_post = async function (req, res) {
     }
 };
 
+// Handle a show one view with id specified by query 
 exports.pastry_view_one_Page = async function(req, res) {
+    console.log("Jyothsna")
     console.log("single view for id " + req.query.id)
     try{
     result = await Pastry.findById( req.query.id)
