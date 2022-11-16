@@ -14,13 +14,13 @@ block content
   form(id='PastryForm', action=actionid, method="PUT") 
     div.form-group 
         label.pastryAttr(for='pastry_flavour') pastry flavour  
-        input#pastry_flavour(type='text', name='pastry_flavour', value="pastry_flavour") 
+        input#pastry_flavour(type='text', name='pastry_flavour', value=pastry_flavour) 
     div.form-group 
         label.pastryAttr(for='calories') calories  
-        input#calories(type='number', name='calories', value="calories") 
+        input#calories(type='number', name='calories', value=calories) 
     div.form-group 
         label.pastryAttr(for='pastry_shape') Pastry shape  
-        input#pastry_shape(type='text', name='pastry_shape', value="pastry_shape") 
+        input#pastry_shape(type='text', name='pastry_shape', value=pastry_shape) 
     input(type="submit") 
  
   script. 
