@@ -17,10 +17,9 @@ passport.use(new LocalStrategy(
       } 
       return done(null, user); 
     });
-  }))
+  }));
 
 var pastry = require("./models/pastry");
-
 
 
 require('dotenv').config();
