@@ -18,7 +18,7 @@ router.get('/', pastry_controlers.pastry_view_all_Page );
 /* GET detail pastry page */
 router.get('/detail', pastry_controlers.pastry_view_one_Page);
 /* GET create pastry page */
-router.get('/create', pastry_controlers.pastry_create_Page);
+router.get('/create', secured,  pastry_controlers.pastry_create_Page);
 
 /* GET create update page */ 
 router.get('/update', secured, pastry_controlers.pastry_update_Page);
