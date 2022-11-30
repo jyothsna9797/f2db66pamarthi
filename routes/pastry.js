@@ -27,6 +27,6 @@ const secured = (req, res, next) => {
 /* GET Pastry */ 
 router.get('/', pastry_controlers.pastry_view_all_Page ); 
 
-router.get('/update', secured, pastry_controlers.pastry_update_Page); 
+router.get('/update', secured, pastry_controlers.pastry_update_Page);
 
-module.exports = router; 
+module.exports = router;
