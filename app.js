@@ -19,7 +19,6 @@ passport.use(new LocalStrategy(
     });
   }));
 
-var pastry = require("./models/pastry");
 
 
 require('dotenv').config();
@@ -35,6 +34,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var pastryRouter = require('./routes/pastry');
 var gridbuildRouter = require('./routes/gridbuild');
+var pastry = require("./models/pastry");
 var selectorRouter = require('./routes/selector');
 var resourceRouter = require('./routes/resource');
 
@@ -128,7 +128,5 @@ async function recreateDB() {
 
 let reseed = true;
 if (reseed) { recreateDB(); }
-
-
 
 module.exports = app;
